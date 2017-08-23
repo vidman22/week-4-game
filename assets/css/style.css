@@ -1,0 +1,17 @@
+body {
+	background-image: url("../images/asanoha-400px.png")
+}
+
+.jumbotron {
+	background-color: white;
+}
+
+img {
+	height: 200px;
+	width: 200px;
+	margin-left: 60px;
+}
+
+.panel-body {
+	font-size: 22px;
+}
