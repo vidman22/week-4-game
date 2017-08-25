@@ -18,16 +18,23 @@ console.log(crystalValues);
 function reset() {
 	targetScore = Math.floor((Math.random() * 102) + 19);
 	guessSum = 0;
-
+	crystalValues = [];
 
 	$(".crystalSum").html(guessSum);
 	$(".goalNumber").html(targetScore);
 
 	for (i=0; i < 4; i++) {
-	var values = Math.floor((Math.random() * 12) + 1);
+	values = Math.floor((Math.random() * 12) + 1);
 
 	crystalValues.push(values);
-	}
+
+}
+
+	$(".crystal-image").each(function(j) {
+		$(this).attr("data-crystalvalue", crystalValues[j]);
+	console.log(j);
+	})	
+
 
 }
 
@@ -40,9 +47,11 @@ function startGame() {
 // Create a random values for the crystal array
 
 for (i=0; i < 4; i++) {
-	var values = Math.floor((Math.random() * 12) + 1);
+	values = Math.floor((Math.random() * 12) + 1);
 
 	crystalValues.push(values);
+
+
 }
 
 // Add classes and attributes to the crystal images
@@ -74,7 +83,7 @@ $(".crystal-image").on("click", function() {
     crystalValue = parseInt(crystalValue);
     
     guessSum += crystalValue;
-	console.log("this" + targetScore);
+	
     $(".crystalSum").html(guessSum);
 
     if (guessSum === targetScore) {
@@ -86,7 +95,7 @@ $(".crystal-image").on("click", function() {
       return;
 
     }
-    console.log("this" + targetScore);
+   
     if (guessSum >= targetScore) {
       losses++;
       $(".losses").html(losses);
