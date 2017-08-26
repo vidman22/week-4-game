@@ -28,7 +28,7 @@ function reset() {
 
 	crystalValues.push(values);
 
-}
+	}
 
 	$(".crystal-image").each(function(j) {
 		$(this).attr("data-crystalvalue", crystalValues[j]);
